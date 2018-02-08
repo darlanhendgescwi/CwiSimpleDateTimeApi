@@ -8,7 +8,7 @@ namespace JefersonBueno
         public static string ChangeDate(string date, char op, long value)
         {
             if(op != '+' && op != '-')
-                return "";
+                throw new ArgumentException("Operação é inválida", nameof(op));
 
             var toAdd = Math.Abs(value);
             if(op == '-')
