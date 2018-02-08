@@ -53,7 +53,7 @@ namespace JefersonBueno
             if(part == DatePortion.Year)
                 return qtYears + 1;
                 
-            qtDays -= qtYears * DaysPerYear; // n = dia do ano subtraindo 1, por ex.: 2018/03/03 => 62º dia; n => 61
+            qtDays -= qtYears * DaysPerYear;
             
             int month = 0;
             while (qtDays >= DaysToMonth[month]) {
@@ -78,9 +78,9 @@ namespace JefersonBueno
             
             int y = year - 1;
             int m = month - 1;
-            ulong n = (ulong)((day - 1) + DaysToMonth[month - 1] + ((year - 1) * DaysPerYear));
+            ulong qtDays = (ulong)((day - 1) + DaysToMonth[month - 1] + ((year - 1) * DaysPerYear));
                     
-            return n * MillisPerDay;
+            return qtDays * MillisPerDay;
         }
         
         private static long TimeToMillis(int hour, int minute)
@@ -89,8 +89,7 @@ namespace JefersonBueno
                 throw new ArgumentOutOfRangeException($"Intervalo inválido para horas e minutos ({hour}:{minute})");
             }
             
-            int qt = (hour) * MillisPerHour + minute * MillisPerMinute;
-            return qt;
+            return hour * MillisPerHour + minute * MillisPerMinute;
         }
     }
 }
