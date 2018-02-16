@@ -14,7 +14,7 @@ namespace JefersonBueno
             Year, Month, Day
         }
 
-        private static readonly int[] MaxDaysOfMonths = { 30, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        private static readonly int[] MaxDaysOfMonths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         private static readonly int[] DaysToMonth = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
         
         private const int DaysPerYear = 365; 
